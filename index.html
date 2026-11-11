@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ClickJR · Grupo 29</title>
+  <meta name="description" content="ClickJR, portal de empleo junior. TP3 Dos sentencias, dos soluciones. Grupo 29, bloque Selección y seguimiento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <noscript><style>#gate { display: none; } #site[hidden] { display: block !important; }</style></noscript>
+</head>
+<body data-view="">
+
+  <!-- PUERTA DE ENTRADA -->
+  <div class="gate" id="gate">
+    <div class="scene" data-scene="gate" aria-hidden="true"></div>
+    <div class="gate-inner wrap">
+      <div class="gate-logo">
+        <img src="S01.webp" alt="Logo original de ClickJR: click en naranja, JR en violeta y un cursor coral sonriente" width="1024" height="448">
+      </div>
+      <p class="gate-desc">Portal de empleo junior que ayuda a encontrar vacantes y seguir postulaciones.</p>
+      <h1 class="gate-title split">¿Qué venís a buscar?</h1>
+      <div class="gate-cards">
+        <a class="path-card path-card--junior tilt" href="#empleo">
+          <span class="path-tag">Para juniors</span>
+          <img class="path-icon" src="assets/ic-search.svg" alt="" width="64" height="64">
+          <h2>Busco mi primer empleo</h2>
+          <p>Vacantes sin experiencia previa y un aviso cada vez que tu postulación avanza.</p>
+          <span class="path-cta">Entrar como candidato <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="path-card path-card--biz tilt" href="#talento">
+          <span class="path-tag">Para empresas</span>
+          <img class="path-icon" src="assets/ic-building.svg" alt="" width="64" height="64">
+          <h2>Busco talento junior</h2>
+          <p>Publicá vacantes y elegí entre finalistas bien evaluados, con el candidato siempre informado.</p>
+          <span class="path-cta">Entrar como empresa <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <p class="gate-foot">Grupo 29 · Bloque Selección y seguimiento · Startup creada en el IFTS 16 · TP3 «Dos sentencias, dos soluciones»</p>
+    </div>
+    <img class="gate-mascot" src="assets/mascot.svg" alt="" width="80" height="100">
+  </div>
+
+  <div class="site" id="site" hidden>
+    <header class="site-header">
+      <div class="progress" aria-hidden="true"><span></span></div>
+      <div class="wrap bar">
+        <a class="brand" href="#inicio" aria-label="ClickJR, volver a la elección de camino">
+          <img src="S01.webp" alt="" width="120" height="46">
+        </a>
+        <nav class="switch" aria-label="Elegí tu camino">
+          <a href="#empleo" data-view-link="empleo">Busco empleo</a>
+          <a href="#talento" data-view-link="talento">Busco talento</a>
+        </nav>
+        <nav class="nav" aria-label="Secciones">
+          <ul>
+            <li><a href="#reglas">Reglas</a></li>
+            <li><a href="#r3">R3</a></li>
+            <li><a href="#r4">R4</a></li>
+            <li><a href="#ficha">Equipo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main" id="contenido">
+
+      <!-- HERO CANDIDATO -->
+      <section class="hero hero--junior only-empleo" aria-labelledby="hj-title">
+        <div class="scene" data-scene="empleo" aria-hidden="true"></div>
+        <div class="wrap hero-inner">
+          <span class="eyebrow">Para juniors · Primer empleo</span>
+          <h1 id="hj-title" class="split" tabindex="-1">Tu primer empleo empieza con un click.</h1>
+          <p class="lead">Encontrá vacantes pensadas para quien recién arranca y seguí cada postulación paso a paso. Cuando la empresa mueve tu postulación, te enterás.</p>
+          <form class="search" id="search" role="search">
+            <label class="sr" for="q">Puesto o área</label>
+            <input id="q" name="q" type="search" placeholder="Puesto o área: frontend, datos, soporte…" autocomplete="off">
+            <label class="sr" for="zona">Zona</label>
+            <select id="zona" name="zona">
+              <option value="">Todas las zonas</option>
+              <option>Remoto</option>
+              <option>CABA</option>
+              <option>Córdoba</option>
+              <option>Rosario</option>
+            </select>
+            <button class="btn" type="submit">Buscar vacantes</button>
+          </form>
+          <ul class="badges">
+            <li><img src="assets/ic-search.svg" alt="" width="24" height="24">Sin experiencia previa</li>
+            <li><img src="assets/ic-bell.svg" alt="" width="24" height="24">Aviso en cada etapa</li>
+            <li><img src="assets/ic-map.svg" alt="" width="24" height="24">Mapa de tu postulación</li>
+          </ul>
+        </div>
+        <svg class="horizon" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path class="hz1" d="M0 70C180 30 320 40 480 64S800 20 1000 50S1320 70 1440 40V140H0Z"/><path class="hz2" d="M0 96C220 70 400 92 620 84S1000 60 1200 86S1380 96 1440 80V140H0Z"/><path class="hz3" d="M0 118C260 104 520 124 760 114S1180 100 1440 116V140H0Z"/></svg>
+      </section>
+
+      <!-- HERO EMPRESA -->
+      <section class="hero hero--biz only-talento" aria-labelledby="hb-title">
+        <div class="scene" data-scene="talento" aria-hidden="true"></div>
+        <div class="wrap hero-inner hero-biz-grid">
+          <div class="hero-biz-copy">
+            <span class="eyebrow">Para empresas · Talento junior</span>
+            <h1 id="hb-title" class="split" tabindex="-1">Contratá talento junior con una selección clara.</h1>
+            <p class="lead">Publicá tu vacante, evaluá postulantes y decidí entre tres finalistas como máximo. Cada cambio de etapa le llega al candidato sin que tengas que escribirle uno por uno.</p>
+            <div class="hero-actions">
+              <a class="btn" href="#r3">Ver cómo elegís finalistas</a>
+              <a class="btn btn--ghost" href="#r4">Ver cómo avisamos</a>
+            </div>
+          </div>
+          <aside class="pipeline" aria-label="Ejemplo de seguimiento de una vacante">
+            <div class="pipe-head">
+              <div>
+                <span class="label">Vacante</span>
+                <strong>Frontend Trainee</strong>
+              </div>
+              <span class="pill">Ejemplo</span>
+            </div>
+            <dl class="pipe">
+              <div><dt>Postulantes</dt><dd data-count="48">48</dd><span class="pipe-bar"><i style="width: 100%"></i></span></div>
+              <div><dt>CV vistos</dt><dd data-count="31">31</dd><span class="pipe-bar"><i style="width: 65%"></i></span></div>
+              <div><dt>Entrevistas</dt><dd data-count="9">9</dd><span class="pipe-bar"><i style="width: 19%"></i></span></div>
+              <div class="is-final"><dt>Finalistas activos</dt><dd>3 / 3</dd><span class="pipe-bar"><i style="width: 100%"></i></span></div>
+            </dl>
+            <p class="pipe-note"><img src="assets/ic-team.svg" alt="" width="32" height="32">Terna completa: para sumar a alguien, primero revisás la selección (R3).</p>
+          </aside>
+        </div>
+        <svg class="horizon" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path class="hz1" d="M0 70C180 30 320 40 480 64S800 20 1000 50S1320 70 1440 40V140H0Z"/><path class="hz2" d="M0 96C220 70 400 92 620 84S1000 60 1200 86S1380 96 1440 80V140H0Z"/><path class="hz3" d="M0 118C260 104 520 124 760 114S1180 100 1440 116V140H0Z"/></svg>
+      </section>
+
+      <!-- VACANTES (candidato) -->
+      <section class="section only-empleo" id="vacantes" aria-labelledby="vac-title">
+        <img class="deco deco--a" src="assets/cloud-a.svg" alt="" data-speed="0.6">
+        <img class="deco deco--b" src="assets/cloud-b.svg" alt="" data-speed="1.2">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Vacantes de ejemplo</span>
+            <h2 id="vac-title">Para empezar esta semana</h2>
+            <p id="vac-summary">6 vacantes junior. Postulate y seguí el avance en tu mapa.</p>
+          </div>
+          <div class="vac-grid" id="vac-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- MAPA (candidato) -->
+      <section class="section only-empleo" id="seguimiento" aria-labelledby="seg-title">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Seguimiento</span>
+            <h2 id="seg-title">Así avanza tu postulación</h2>
+            <p>Cada paso es un cambio de etapa que registra la empresa, y cada cambio te llega como aviso (R4). En la etapa de finalistas competís con dos personas como máximo (R3).</p>
+          </div>
+          <div class="stages-wrap">
+            <div class="stages-track" aria-hidden="true">
+              <span class="stages-line"></span>
+              <span class="stages-fill"></span>
+              <img class="traveler" src="assets/mascot.svg" alt="" width="40" height="50">
+            </div>
+            <ol class="stages">
+              <li><img src="assets/ic-cv.svg" alt="" width="64" height="64"><h3>Postulado</h3><p>Enviaste tu CV.</p></li>
+              <li><img src="assets/ic-eye.svg" alt="" width="64" height="64"><h3>CV visto</h3><p>La empresa abrió tu perfil.</p></li>
+              <li><img src="assets/ic-chat.svg" alt="" width="64" height="64"><h3>Entrevista</h3><p>Te invitan a conversar.</p></li>
+              <li class="is-r3"><img src="assets/ic-team.svg" alt="" width="64" height="64"><h3>Finalista</h3><p>Estás en la terna final.</p><span class="pill pill--accent">R3 · máximo 3</span></li>
+              <li><img src="assets/ic-trophy.svg" alt="" width="64" height="64"><h3>Oferta</h3><p>Llega la propuesta.</p></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- CÓMO FUNCIONA (empresa) -->
+      <section class="section only-talento" id="proceso" aria-labelledby="proc-title">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Proceso</span>
+            <h2 id="proc-title">Tres pasos para cubrir tu vacante</h2>
+          </div>
+          <ol class="steps">
+            <li>
+              <img src="assets/ic-building.svg" alt="" width="64" height="64">
+              <h3>Publicás y evaluás</h3>
+              <p>Cargás la vacante, revisás perfiles junior y movés a cada postulante por las etapas.</p>
+            </li>
+            <li>
+              <img src="assets/ic-team.svg" alt="" width="64" height="64">
+              <h3>Elegís una terna</h3>
+              <p>Hasta tres finalistas activos por vacante. Si querés sumar un cuarto, primero revisás la selección.</p>
+              <span class="pill pill--accent">Regla R3</span>
+            </li>
+            <li>
+              <img src="assets/ic-bell.svg" alt="" width="64" height="64">
+              <h3>El candidato se entera</h3>
+              <p>Cada cambio de etapa que registrás le llega al postulante con el próximo paso.</p>
+              <span class="pill pill--accent">Regla R4</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- REGLAS -->
+      <section class="section band" id="reglas" aria-labelledby="reglas-title">
+        <svg class="horizon horizon--top" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path class="hz1" d="M0 70C180 30 320 40 480 64S800 20 1000 50S1320 70 1440 40V140H0Z"/><path class="hz2" d="M0 96C220 70 400 92 620 84S1000 60 1200 86S1380 96 1440 80V140H0Z"/><path class="hz3" d="M0 118C260 104 520 124 760 114S1180 100 1440 116V140H0Z"/></svg>
+        <img class="deco deco--c" src="assets/cloud-a.svg" alt="" data-speed="0.8">
+        <img class="deco deco--d" src="assets/cloud-b.svg" alt="" data-speed="1.4">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Bloque asignado · Selección y seguimiento</span>
+            <h2 id="reglas-title">Las dos reglas que resolvemos</h2>
+            <p>Sentencias con su redacción original. Debajo, una propuesta por cada una, con su diagrama y el detalle de la solución.</p>
+          </div>
+          <div class="rules">
+            <a class="rule tilt" href="#r3">
+              <img src="assets/ic-team.svg" alt="" width="64" height="64">
+              <span class="label">R3 · Selección</span>
+              <p>Si una empresa intenta agregar un finalista y ya hay tres o más finalistas activos en esa vacante, el sistema bloquea esa incorporación y solicita revisar la selección.</p>
+              <span class="rule-link">Propuesta: Terna con tope <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="rule tilt" href="#r4">
+              <img src="assets/ic-bell.svg" alt="" width="64" height="64">
+              <span class="label">R4 · Seguimiento</span>
+              <p>Si la empresa registra un cambio de etapa de una postulación, el sistema informa ese cambio al postulante.</p>
+              <span class="rule-link">Propuesta: Aviso de etapa <span aria-hidden="true">→</span></span>
+            </a>
+          </div>
+        </div>
+        <svg class="horizon" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path class="hz1" d="M0 70C180 30 320 40 480 64S800 20 1000 50S1320 70 1440 40V140H0Z"/><path class="hz2" d="M0 96C220 70 400 92 620 84S1000 60 1200 86S1380 96 1440 80V140H0Z"/><path class="hz3" d="M0 118C260 104 520 124 760 114S1180 100 1440 116V140H0Z"/></svg>
+      </section>
+
+      <!-- R3 -->
+      <section class="section mission" id="r3" aria-labelledby="r3-title">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Regla R3 · Selección</span>
+            <h2 id="r3-title">Terna con tope</h2>
+            <p class="for-empleo">Si llegás a finalista, competís como máximo con otras dos personas, y la respuesta llega antes.</p>
+            <p class="for-talento">Tu equipo decide entre tres finalistas como máximo. Menos candidatos en la recta final, decisiones más rápidas.</p>
+          </div>
+
+          <blockquote class="sentence">
+            <span class="label">Sentencia original · R3</span>
+            <p>Si una empresa intenta agregar un finalista y ya hay tres o más finalistas activos en esa vacante, el sistema bloquea esa incorporación y solicita revisar la selección.</p>
+          </blockquote>
+
+          <div class="mission-grid">
+            <div class="proposal">
+              <h3>Propuesta: máximo 3 finalistas activos por vacante</h3>
+              <div class="block">
+                <span class="label">Beneficio</span>
+                <p>La empresa decide entre pocos candidatos bien evaluados y ningún postulante queda esperando en una lista de finalistas que nunca avanza. Ser finalista vuelve a significar algo.</p>
+              </div>
+              <div class="box">
+                <span class="label">Cómo responde a R3</span>
+                <p>Antes de sumar a alguien, el agente cuenta los finalistas activos de esa vacante. Si ya hay tres o más, bloquea la incorporación y le pide a la empresa revisar la selección. Si hay menos, lo suma.</p>
+              </div>
+              <div class="box box--design">
+                <span class="label">Decisiones del grupo</span>
+                <ul>
+                  <li>El sistema nunca quita finalistas solo: la revisión la hace una persona.</li>
+                  <li>Para liberar un lugar, el reclutador pausa o descarta a un finalista y vuelve a intentar.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="demo">
+              <div class="demo-head">
+                <img src="assets/ic-team.svg" alt="" width="44" height="44">
+                <strong>Vacante: Frontend Trainee</strong>
+                <span class="pill">Demo ilustrativa</span>
+              </div>
+              <div class="demo-row">
+                <span class="label">Finalistas activos</span>
+                <strong class="num" id="r3-count">3/3</strong>
+              </div>
+              <div class="slots" id="r3-slots"></div>
+              <span class="label">En evaluación</span>
+              <ul class="pool" id="r3-pool"></ul>
+              <div class="status" id="r3-status" role="status" aria-live="polite">Probá sumar a otra persona a la terna.</div>
+              <p class="demo-note">Simulación en el navegador con datos de ejemplo. No hay backend ni agentes reales.</p>
+            </div>
+          </div>
+
+          <figure class="diagram">
+            <figcaption class="diagram-head">
+              <span class="label">Flujo del agente · R3</span>
+              <strong>Diagrama: sumar un finalista</strong>
+            </figcaption>
+            <div class="diagram-scroll">
+              <svg class="dg" viewBox="0 0 800 528" role="img" aria-labelledby="dg-r3-title dg-r3-desc">
+                <title id="dg-r3-title">Flujo de la propuesta para R3</title>
+                <desc id="dg-r3-desc">Inicio: la empresa intenta sumar un finalista. El agente lee vacante, candidato, finalistas activos y autor del pedido. Decisión: hay tres o más activos. Si: bloquear y solicitar revisar la selección; un reclutador pausa o descarta a uno y reintenta, o mantiene la terna. No: sumar el finalista. Resultado: nunca hay más de tres finalistas activos.</desc>
+                <defs>
+                  <marker id="r3-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+                    <path d="M0 0L10 5L0 10z" class="head"/>
+                  </marker>
+                </defs>
+
+                <rect class="n n-start" x="40" y="20" width="240" height="80"/>
+                <text class="k inv" x="56" y="44">INICIO</text>
+                <text class="t inv" x="56" y="68">La empresa intenta sumar</text>
+                <text class="t inv" x="56" y="88">un finalista a la vacante</text>
+
+                <path class="edge" d="M160 100V136" marker-end="url(#r3-a)"/>
+                <text class="e" x="170" y="123">lee</text>
+
+                <rect class="n n-data" x="40" y="136" width="240" height="112"/>
+                <text class="k" x="56" y="160">DATOS DE ENTRADA</text>
+                <text class="t" x="56" y="184">Vacante y candidato</text>
+                <text class="t" x="56" y="206">Finalistas activos hoy</text>
+                <text class="t" x="56" y="228">Quién hace el pedido</text>
+
+                <path class="edge" d="M160 248V272" marker-end="url(#r3-a)"/>
+                <text class="e" x="170" y="265">cuenta activos</text>
+
+                <polygon class="n n-dec" points="160,272 272,334 160,396 48,334"/>
+                <text class="k k-dec" x="160" y="326" text-anchor="middle">DECISIÓN</text>
+                <text class="t tb" x="160" y="350" text-anchor="middle">¿Activos ≥ 3?</text>
+
+                <path class="edge" d="M272 334H320" marker-end="url(#r3-a)"/>
+                <rect class="lbl-box" x="278" y="304" width="34" height="20"/>
+                <text class="lbl" x="295" y="318" text-anchor="middle">SÍ</text>
+
+                <rect class="n n-block" x="320" y="296" width="236" height="76"/>
+                <text class="k" x="336" y="318">ACCIÓN</text>
+                <text class="t" x="336" y="340">Bloquear y solicitar</text>
+                <text class="t" x="336" y="362">revisar la selección</text>
+
+                <path class="edge" d="M556 334H596" marker-end="url(#r3-a)"/>
+
+                <rect class="n n-human" x="596" y="296" width="184" height="76"/>
+                <text class="k" x="608" y="318">REVISIÓN HUMANA</text>
+                <text class="t" x="608" y="340">Reclutador pausa</text>
+                <text class="t" x="608" y="362">o descarta a uno</text>
+
+                <path class="edge edge-dash" d="M688 296V60H280" marker-end="url(#r3-a)"/>
+                <rect class="lbl-box" x="436" y="49" width="108" height="22"/>
+                <text class="lbl" x="490" y="64" text-anchor="middle">REINTENTA</text>
+
+                <path class="edge" d="M688 372V470H556" marker-end="url(#r3-a)"/>
+                <rect class="lbl-box" x="616" y="404" width="144" height="22"/>
+                <text class="lbl" x="688" y="419" text-anchor="middle">MANTIENE TERNA</text>
+
+                <path class="edge" d="M160 396V432" marker-end="url(#r3-a)"/>
+                <rect class="lbl-box" x="170" y="403" width="34" height="20"/>
+                <text class="lbl" x="187" y="417" text-anchor="middle">NO</text>
+
+                <rect class="n n-ok" x="40" y="432" width="240" height="76"/>
+                <text class="k" x="56" y="454">ACCIÓN</text>
+                <text class="t" x="56" y="476">Sumar el finalista</text>
+                <text class="t" x="56" y="498">a la terna activa</text>
+
+                <path class="edge" d="M280 470H320" marker-end="url(#r3-a)"/>
+
+                <rect class="n n-end" x="320" y="432" width="236" height="76"/>
+                <text class="k inv" x="336" y="454">RESULTADO</text>
+                <text class="t inv" x="336" y="476">Nunca hay más de 3</text>
+                <text class="t inv" x="336" y="498">finalistas activos</text>
+
+                <rect class="n-note" x="320" y="120" width="300" height="84"/>
+                <text class="k" x="336" y="144">NOTA</text>
+                <text class="t" x="336" y="168">La revisión la decide una</text>
+                <text class="t" x="336" y="190">persona: decisión del grupo.</text>
+              </svg>
+            </div>
+            <p class="diagram-text">Lectura del flujo: el agente recibe el pedido, cuenta los finalistas activos y decide. Con menos de tres, suma al candidato. Con tres o más, bloquea y pide revisar; un reclutador pausa o descarta a alguien y reintenta, o mantiene la terna como está.</p>
+          </figure>
+
+          <div class="details-head">
+            <span class="label">Detalle de la solución R3</span>
+            <strong>Abrí cada parte del flujo</strong>
+          </div>
+          <div class="acc">
+            <details>
+              <summary><span class="num">01</span>Datos</summary>
+              <div class="body">
+                <ul>
+                  <li>Vacante: identificador, título y estado (abierta o cerrada).</li>
+                  <li>Candidato que se quiere sumar como finalista.</li>
+                  <li>Finalistas de la vacante con su estado: activo, pausado o descartado.</li>
+                  <li>Persona de la empresa que hace el pedido.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">02</span>Decisión</summary>
+              <div class="body">
+                <p>¿La vacante ya tiene tres o más finalistas activos? Solo cuentan los activos: los pausados y descartados no ocupan lugar.</p>
+                <ul>
+                  <li>Sí: se bloquea la incorporación.</li>
+                  <li>No: se permite.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">03</span>Acción</summary>
+              <div class="body">
+                <ul>
+                  <li>Si bloquea: no agrega a nadie y muestra «Ya hay 3 finalistas activos. Revisá la selección», con accesos directos para pausar o descartar.</li>
+                  <li>Si permite: suma al candidato como finalista activo. Como cambia su etapa, también se dispara el aviso de R4.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">04</span>Resultado</summary>
+              <div class="body">
+                <p>Ninguna vacante supera los tres finalistas activos. Cada intento bloqueado queda registrado con fecha y autor, para que el equipo vea cuándo se pidió revisar.</p>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">05</span>Excepciones</summary>
+              <div class="body">
+                <ul>
+                  <li>El candidato ya es finalista: no se duplica y se avisa. <span class="tag-group">Decisión del grupo</span></li>
+                  <li>Vacante cerrada: no se pueden sumar finalistas. <span class="tag-group">Decisión del grupo</span></li>
+                  <li>Dos reclutadores suman a la vez: se cuenta al confirmar y el segundo pedido queda bloqueado. <span class="tag-group">Decisión del grupo</span></li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">06</span>Intervención humana</summary>
+              <div class="body">
+                <p>El agente nunca elige a quién sacar. Un reclutador revisa la terna, pausa o descarta a un finalista si corresponde y vuelve a intentar. También puede mantener la terna y no sumar a nadie. <span class="tag-group">Decisión del grupo</span></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- R4 -->
+      <section class="section mission" id="r4" aria-labelledby="r4-title">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Regla R4 · Seguimiento</span>
+            <h2 id="r4-title">Aviso de etapa</h2>
+            <p class="for-empleo">Cada vez que la empresa mueve tu postulación, te llega un aviso con el próximo paso. Nada de esperar sin saber.</p>
+            <p class="for-talento">Cada movimiento que registrás le llega al candidato. Tu equipo no tiene que escribir mensajes uno por uno.</p>
+          </div>
+
+          <blockquote class="sentence">
+            <span class="label">Sentencia original · R4</span>
+            <p>Si la empresa registra un cambio de etapa de una postulación, el sistema informa ese cambio al postulante.</p>
+          </blockquote>
+
+          <div class="mission-grid">
+            <div class="proposal">
+              <h3>Propuesta: cada cambio de etapa llega como aviso</h3>
+              <div class="block">
+                <span class="label">Beneficio</span>
+                <p>El postulante sabe siempre en qué etapa está su postulación y cuál es el próximo paso, sin tener que escribirle a la empresa para preguntar. Cada aviso es también una razón concreta para volver a ClickJR.</p>
+              </div>
+              <div class="box">
+                <span class="label">Cómo responde a R4</span>
+                <p>Cuando la empresa registra el cambio, el agente arma un aviso con la nueva etapa y el próximo paso, lo envía al postulante y actualiza su mapa.</p>
+              </div>
+              <div class="box box--design">
+                <span class="label">Decisiones del grupo</span>
+                <ul>
+                  <li>Los avisos de cierre (no seleccionado) pasan antes por un reclutador, para que lleguen con una devolución cuidada.</li>
+                  <li>El aviso sale por el canal que eligió el postulante y siempre queda en la app.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="demo">
+              <div class="demo-head">
+                <img src="assets/ic-bell.svg" alt="" width="44" height="44">
+                <strong>Postulación de Sofi</strong>
+                <span class="pill">Demo ilustrativa</span>
+              </div>
+              <div class="r4-demo">
+                <div class="company">
+                  <span class="label">Panel de la empresa</span>
+                  <label for="r4-stage">Nueva etapa</label>
+                  <select id="r4-stage"></select>
+                  <button class="btn btn--sm" type="button" id="r4-register">Registrar cambio</button>
+                  <div class="draft" id="r4-draft" hidden>
+                    <span class="label">Mensaje en revisión</span>
+                    <p>«Gracias por llegar hasta acá. Esta vez elegimos otro perfil; te dejamos una devolución y 3 vacantes parecidas.»</p>
+                    <button class="btn btn--sm" type="button" id="r4-approve">Aprobar y enviar</button>
+                  </div>
+                  <div class="status" id="r4-status" role="status" aria-live="polite">Elegí una etapa y registrá el cambio.</div>
+                </div>
+                <div class="phone" aria-label="Pantalla del postulante">
+                  <div class="screen">
+                    <span class="label">Frontend Trainee</span>
+                    <ol class="track" id="r4-track"></ol>
+                    <div class="inbox" id="r4-inbox" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="demo-note">Simulación en el navegador con datos de ejemplo. No se envían mensajes reales.</p>
+            </div>
+          </div>
+
+          <figure class="diagram">
+            <figcaption class="diagram-head">
+              <span class="label">Flujo del agente · R4</span>
+              <strong>Diagrama: avisar un cambio de etapa</strong>
+            </figcaption>
+            <div class="diagram-scroll">
+              <svg class="dg" viewBox="0 0 800 528" role="img" aria-labelledby="dg-r4-title dg-r4-desc">
+                <title id="dg-r4-title">Flujo de la propuesta para R4</title>
+                <desc id="dg-r4-desc">Inicio: la empresa registra un cambio de etapa. El agente lee postulación, etapa anterior y nueva y canal del postulante. Decisión: es un cierre. Si: redactar aviso de cierre; un reclutador lo corrige o lo aprueba. No: avisar la nueva etapa y el próximo paso. Resultado: el postulante ve el cambio en su mapa.</desc>
+                <defs>
+                  <marker id="r4-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+                    <path d="M0 0L10 5L0 10z" class="head"/>
+                  </marker>
+                </defs>
+
+                <rect class="n n-start" x="40" y="20" width="240" height="80"/>
+                <text class="k inv" x="56" y="44">INICIO</text>
+                <text class="t inv" x="56" y="68">La empresa registra un</text>
+                <text class="t inv" x="56" y="88">cambio de etapa</text>
+
+                <path class="edge" d="M160 100V136" marker-end="url(#r4-a)"/>
+                <text class="e" x="170" y="123">lee</text>
+
+                <rect class="n n-data" x="40" y="136" width="240" height="112"/>
+                <text class="k" x="56" y="160">DATOS DE ENTRADA</text>
+                <text class="t" x="56" y="184">Postulación y vacante</text>
+                <text class="t" x="56" y="206">Etapa anterior y nueva</text>
+                <text class="t" x="56" y="228">Canal del postulante</text>
+
+                <path class="edge" d="M160 248V272" marker-end="url(#r4-a)"/>
+                <text class="e" x="170" y="265">compara etapas</text>
+
+                <polygon class="n n-dec" points="160,272 272,334 160,396 48,334"/>
+                <text class="k k-dec" x="160" y="326" text-anchor="middle">DECISIÓN</text>
+                <text class="t tb" x="160" y="350" text-anchor="middle">¿Es un cierre?</text>
+
+                <path class="edge" d="M272 334H320" marker-end="url(#r4-a)"/>
+                <rect class="lbl-box" x="278" y="304" width="34" height="20"/>
+                <text class="lbl" x="295" y="318" text-anchor="middle">SÍ</text>
+
+                <rect class="n" x="320" y="296" width="236" height="76"/>
+                <text class="k" x="336" y="318">ACCIÓN</text>
+                <text class="t" x="336" y="340">Redactar aviso de cierre</text>
+                <text class="t" x="336" y="362">con devolución breve</text>
+
+                <path class="edge" d="M556 334H596" marker-end="url(#r4-a)"/>
+
+                <rect class="n n-human" x="596" y="296" width="184" height="76"/>
+                <text class="k" x="608" y="318">REVISIÓN HUMANA</text>
+                <text class="t" x="608" y="340">Reclutador revisa</text>
+                <text class="t" x="608" y="362">el texto del aviso</text>
+
+                <path class="edge edge-dash" d="M688 296V262H438V296" marker-end="url(#r4-a)"/>
+                <rect class="lbl-box" x="514" y="251" width="92" height="22"/>
+                <text class="lbl" x="560" y="266" text-anchor="middle">CORRIGE</text>
+
+                <path class="edge" d="M688 372V470H556" marker-end="url(#r4-a)"/>
+                <rect class="lbl-box" x="636" y="404" width="104" height="22"/>
+                <text class="lbl" x="688" y="419" text-anchor="middle">APRUEBA</text>
+
+                <path class="edge" d="M160 396V432" marker-end="url(#r4-a)"/>
+                <rect class="lbl-box" x="170" y="403" width="34" height="20"/>
+                <text class="lbl" x="187" y="417" text-anchor="middle">NO</text>
+
+                <rect class="n n-ok" x="40" y="432" width="240" height="76"/>
+                <text class="k" x="56" y="454">ACCIÓN</text>
+                <text class="t" x="56" y="476">Avisar la nueva etapa</text>
+                <text class="t" x="56" y="498">y el próximo paso</text>
+
+                <path class="edge" d="M280 470H320" marker-end="url(#r4-a)"/>
+
+                <rect class="n n-end" x="320" y="432" width="236" height="76"/>
+                <text class="k inv" x="336" y="454">RESULTADO</text>
+                <text class="t inv" x="336" y="476">El postulante ve el</text>
+                <text class="t inv" x="336" y="498">cambio en su mapa</text>
+
+                <rect class="n-note" x="320" y="120" width="300" height="84"/>
+                <text class="k" x="336" y="144">NOTA</text>
+                <text class="t" x="336" y="168">Revisar los cierres es una</text>
+                <text class="t" x="336" y="190">decisión del grupo.</text>
+              </svg>
+            </div>
+            <p class="diagram-text">Lectura del flujo: el agente recibe el cambio y mira si es un cierre. Si no lo es, avisa enseguida la nueva etapa y el próximo paso. Si es un cierre, prepara un mensaje con devolución que un reclutador corrige o aprueba antes de enviarlo. En los dos caminos el postulante queda informado.</p>
+          </figure>
+
+          <div class="details-head">
+            <span class="label">Detalle de la solución R4</span>
+            <strong>Abrí cada parte del flujo</strong>
+          </div>
+          <div class="acc">
+            <details>
+              <summary><span class="num">01</span>Datos</summary>
+              <div class="body">
+                <ul>
+                  <li>Postulación y vacante a la que pertenece.</li>
+                  <li>Etapa anterior, etapa nueva y fecha del cambio.</li>
+                  <li>Postulante y su canal preferido (app o email).</li>
+                  <li>Persona de la empresa que registró el cambio.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">02</span>Decisión</summary>
+              <div class="body">
+                <p>¿La nueva etapa es un cierre (no seleccionado)? <span class="tag-group">Decisión del grupo</span></p>
+                <ul>
+                  <li>No: el aviso sale automáticamente.</li>
+                  <li>Sí: el aviso espera la aprobación de un reclutador.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">03</span>Acción</summary>
+              <div class="body">
+                <ul>
+                  <li>Arma un aviso con la nueva etapa y el próximo paso («Elegí horario para la entrevista»).</li>
+                  <li>Lo envía por el canal elegido y lo deja en la app.</li>
+                  <li>Actualiza el mapa de la postulación.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">04</span>Resultado</summary>
+              <div class="body">
+                <p>El postulante queda informado de cada cambio de etapa y ve el historial completo en su mapa. La empresa ve que el aviso fue enviado.</p>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">05</span>Excepciones</summary>
+              <div class="body">
+                <ul>
+                  <li>La etapa nueva es igual a la anterior: no hubo cambio, no se avisa.</li>
+                  <li>Falla el envío por email: el aviso queda en la app y se reintenta. <span class="tag-group">Decisión del grupo</span></li>
+                  <li>Varios cambios seguidos: un aviso por cada cambio, en orden.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary><span class="num">06</span>Intervención humana</summary>
+              <div class="body">
+                <p>Solo en los cierres: un reclutador lee el mensaje, lo corrige si hace falta y lo aprueba. La revisión puede cambiar el texto, pero no evita el aviso: R4 obliga a informar el cambio. <span class="tag-group">Decisión del grupo</span></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- FICHA -->
+      <section class="section" id="ficha" aria-labelledby="ficha-title">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Ficha del proyecto</span>
+            <h2 id="ficha-title">Equipo y asignación</h2>
+          </div>
+          <dl class="ficha">
+            <div><dt class="label">Startup</dt><dd>ClickJR<small>Portal de empleo junior que ayuda a encontrar vacantes y seguir postulaciones.</small></dd></div>
+            <div><dt class="label">Equipo</dt><dd>Grupo 29<small>Integrantes y aportes en el README del repositorio.</small></dd></div>
+            <div><dt class="label">Bloque</dt><dd>Selección y seguimiento<small>Sentencias R3 y R4.</small></dd></div>
+            <div><dt class="label">Logo</dt><dd>S01-B<small>Logo original asignado por sorteo docente.</small></dd></div>
+          </dl>
+          <blockquote class="origin">
+            <p>«Las startups fueron creadas por estudiantes del IFTS 16, que trabajaron sus condiciones de funcionamiento mediante lógica proposicional.»</p>
+            <cite class="label">Origen de ClickJR · consigna del TP3</cite>
+          </blockquote>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <svg class="horizon horizon--footer" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path class="hz1" d="M0 70C180 30 320 40 480 64S800 20 1000 50S1320 70 1440 40V140H0Z"/><path class="hz2" d="M0 96C220 70 400 92 620 84S1000 60 1200 86S1380 96 1440 80V140H0Z"/><path class="hz3" d="M0 118C260 104 520 124 760 114S1180 100 1440 116V140H0Z"/></svg>
+      <img class="footer-mascot" src="assets/mascot.svg" alt="" width="64" height="80">
+      <div class="wrap">
+        <img class="footer-logo" src="S01.webp" alt="ClickJR" width="150" height="58">
+        <p><strong>ClickJR · Grupo 29</strong> · TP3 «Dos sentencias, dos soluciones» · Desarrollo de Sistemas Web Front End.</p>
+        <p>Página construida de forma 100% agéntica. Las demos son ilustrativas: no hay IA integrada, agentes en ejecución, APIs ni backend. Los flujos solo se explican y dibujan.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="scene.js"></script>
+  <script src="anim.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
