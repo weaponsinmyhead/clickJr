@@ -2,8 +2,8 @@
 
 Landing del TP3 «Dos sentencias, dos soluciones» (Desarrollo de Sistemas Web Front End).
 
-- **Landing publicada:** _(completar con el enlace de Vercel / GitHub Pages)_
-- **Repositorio:** _(completar con el enlace público)_
+- **Landing publicada:** [clickjr.vercel.app](https://clickjr.vercel.app/)
+- **Repositorio:** [weaponsinmyhead/clickJr](https://github.com/weaponsinmyhead/clickJr)
 
 ## Integrantes y aportes
 
